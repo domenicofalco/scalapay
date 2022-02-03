@@ -1,24 +1,28 @@
 import Head from "next/head";
-import styled from 'styled-components'
+import Checkout from "components/Checkout";
+import { pink } from "colors";
 
-const Button = styled.a`
-  display: inline-block;
-  border-radius: 3px;
-  padding: 0.5rem 0;
-  margin: 0.5rem 1rem;
-  width: 11rem;
-  background: transparent;
-  color: black;
-  border: 2px solid red;
-`;
+const styles = {
+	div: {
+		background: pink
+	},
+	section: {
+		width: "100%",
+		maxWidth: "800px",
+		margin: "0 auto",
+		padding: "120px 5%"
+	}
+}
 
 export default function Home() {
 	return (
-		<div>
+		<div style={styles.div}>
 			<Head>
 				<title>Scalapay test</title>
 			</Head>
-			<Button href="#">Button test</Button>
+			<section style={styles.section}>
+				<Checkout />
+			</section>
 		</div>
 	);
 }

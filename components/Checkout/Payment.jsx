@@ -1,6 +1,6 @@
 import Form from "usetheform";
 import InputField from "molecules/InputField";
-import { inputField } from './Styles.module.css';
+import { inputField, form } from './Styles.module.css';
 
 export default function Payment() {
 	const onChange = state => {
@@ -8,7 +8,7 @@ export default function Payment() {
 	}
 
 	return (
-		<Form onChange={onChange}>
+		<Form className={form} onChange={onChange}>
 			<section className={inputField}>
 				<InputField 
 					type="text"
