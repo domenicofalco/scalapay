@@ -5,7 +5,13 @@
     ["module-resolver", {
       "root": ["."],
       "alias": {
-        "design-system": "./design-system"
+        "components": "./components",
+        "atoms": "./design-system/atoms",
+        "molecules": "./design-system/molecules",
+        "organisms": "./design-system/organisms",
+        "fonts": "./styles/fonts",
+        "colors": "./styles/colors",
+        "breakpoints": "./styles/breakpoints"
       }
     }]
   ]
