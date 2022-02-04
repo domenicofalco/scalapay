@@ -12,7 +12,8 @@
         "fonts": "./styles/fonts",
         "colors": "./styles/colors",
         "breakpoints": "./styles/breakpoints",
-        "utils": "./utils"
+        "utils": "./utils",
+        "api": "./api"
       }
     }]
   ]

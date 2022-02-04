@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Form from "usetheform";
 import { BillingForm } from "organisms/Forms/BillingForm";
 import { ConsumerForm } from "organisms/Forms/ConsumerForm";
@@ -6,7 +7,7 @@ import { ShippingForm } from "organisms/Forms/ShippingForm";
 import { form } from "./Styles.module.css";
 import { FormTemplate } from "./FormTemplate";
 
-export default function Payment() {
+export default function Payment({ cart }) {
   const onSubmit = state => {
     console.log(state);
   };
@@ -33,3 +34,7 @@ export default function Payment() {
     </Form>
   );
 }
+
+Payment.propTypes = {
+  cart: PropTypes.array
+};

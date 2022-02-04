@@ -1,5 +1,7 @@
+import PropTypes from "prop-types";
 import Head from "next/head";
 import Checkout from "components/Checkout";
+import { CART_ENDPOINT } from "api";
 import { pink } from "colors";
 
 const styles = {
@@ -14,15 +16,37 @@ const styles = {
   }
 };
 
-export default function Home() {
+export default function Home({ cart }) {
   return (
     <div style={styles.div}>
       <Head>
         <title>Scalapay test</title>
       </Head>
       <section style={styles.section}>
-        <Checkout />
+        <Checkout cart={cart} />
       </section>
     </div>
   );
 }
+
+Home.getInitialProps = async function () {
+  const res = await fetch(CART_ENDPOINT);
+  const cart = await res.json();
+
+  return { cart };
+};
+
+Home.propTypes = {
+  cart: PropTypes.arrayOf(
+    PropTypes.shape({
+      price: PropTypes.shape({
+        amount: PropTypes.string,
+        currency: PropTypes.string
+      }),
+      brand: PropTypes.string,
+      category: PropTypes.string,
+      name: PropTypes.string,
+      id: PropTypes.string
+    })
+  )
+};
