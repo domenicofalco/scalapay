@@ -1,29 +1,21 @@
 import Form from "usetheform";
-import InputField from "molecules/InputField";
-import { inputField, form } from './Styles.module.css';
+import Forms, { FORM_TYPE_BILLING, FORM_TYPE_CONSUMER } from "organisms/Forms";
+import { form } from './Styles.module.css';
 
 export default function Payment() {
-	const onChange = state => {
+	const onSubmit = state => {
 		console.log(state);
 	}
 
 	return (
-		<Form className={form} onChange={onChange}>
-			<section className={inputField}>
-				<InputField 
-					type="text"
-					name="name" 
-					label="some really loong too long label label" 
-				/>
-			</section>
-
-			<section className={inputField}>
-				<InputField
-					type="text"
-					name="name"
-					label="some label"
-				/>
-			</section>
+		<Form
+			className={form} 
+			onSubmit={onSubmit}
+		>
+			<Forms type={FORM_TYPE_BILLING} title="Billing Info" />
+			<Forms type={FORM_TYPE_CONSUMER} title="Consumer info" />
+			
+			<button type="submit">submit</button>
 		</Form>
 	);
 }

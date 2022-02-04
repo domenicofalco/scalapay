@@ -11,7 +11,8 @@
         "organisms": "./design-system/organisms",
         "fonts": "./styles/fonts",
         "colors": "./styles/colors",
-        "breakpoints": "./styles/breakpoints"
+        "breakpoints": "./styles/breakpoints",
+        "utils": "./utils"
       }
     }]
   ]

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styled from 'styled-components'
-import { Input as I } from "usetheform";
-import { grey900 } from "colors";
+import { Input as I, useValidation } from "usetheform";
+import { grey700, red900 } from "colors";
 import { small, bold } from "fonts";
 import { tablet } from "breakpoints";
 
@@ -30,27 +30,42 @@ const Label = styled.label`
 const Input = styled(I)`
   padding: 5px 12px;
   border-radius: 5px;
-  border: 1px solid ${grey900};
   font-size: ${small};
   width: 100%;
+  display: block;
+  outline: none;
 `;
 
-const InputField = ({type, label, ...rest}) => {
+const InputField = ({ className, type, label, validators, ...rest }) => {
+  const [status, validationAttr] = useValidation(validators);
+
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <Label>{label}</Label>
-      <Input type={type} {...rest} />
+      <Input
+        style={{
+          border: `2px solid ${status.isValid ? grey700 : red900}`
+        }}
+        touched 
+        type={type}
+        {...validationAttr} 
+        {...rest}
+      />
     </Wrapper>
   );
 }
 
 InputField.defaultProps = {
-  label: ""
+  label: "",
+  className: "",
+  validators: []
 };
 
 InputField.propTypes = {
   type: PropTypes.string.isRequired,
   label: PropTypes.string,
+  className: PropTypes.string,
+  validators: PropTypes.array
 };
 
 export default InputField;
