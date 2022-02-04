@@ -9,8 +9,11 @@ import { form } from "./Styles.module.css";
 import { FormTemplate } from "./FormTemplate";
 
 export default function Payment() {
-  const { cartAmount } = useContext(CheckoutContext);
-  const [amount] = cartAmount;
+  const { cart } = useContext(CheckoutContext);
+  const [context] = cart;
+  const totalAmount = context.reduce((acc, a) => {
+    return acc + parseInt(a.price.amount) * a.qt;
+  }, 0);
 
   const onSubmit = state => {
     console.log(state);
@@ -34,7 +37,7 @@ export default function Payment() {
         <ShippingForm />
       </FormTemplate>
 
-      <button type="submit">buy for {amount} EUR</button>
+      <button type="submit">buy for {totalAmount} EUR</button>
     </Form>
   );
 }

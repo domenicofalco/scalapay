@@ -6,15 +6,10 @@ import Cart from "./Cart";
 import { CheckoutContext } from "contexts";
 
 export default function Checkout({ cart }) {
-  const initCartAmount = cart.reduce((acc, a) => {
-    return acc + parseInt(a.price.amount);
-  }, 0);
-
-  const [amount, setAmount] = useState(initCartAmount);
+  const [context, dispatch] = useState(cart);
 
   const store = {
-    cart,
-    cartAmount: [amount, setAmount]
+    cart: [context, dispatch]
   };
 
   return (
