@@ -4,9 +4,9 @@ import { ConsumerForm } from "./ConsumerForm";
 export const FORM_TYPE_BILLING = "billing_form";
 export const FORM_TYPE_CONSUMER = "consumer_form";
 
-export default function Forms ({type, ...rest}) {
+export default function Forms({ type, ...rest }) {
   let component = null;
-  
+
   switch (type) {
     case FORM_TYPE_BILLING:
       component = <BillingForm {...rest} />;
@@ -18,5 +18,5 @@ export default function Forms ({type, ...rest}) {
       component = null;
   }
 
-  return component;  
+  return component;
 }

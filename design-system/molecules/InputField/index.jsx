@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styled from 'styled-components'
+import styled from "styled-components";
 import { Input as I, useValidation } from "usetheform";
 import { grey700, red900 } from "colors";
 import { small, bold } from "fonts";
@@ -23,7 +23,7 @@ const Label = styled.label`
 
   @media (min-width: ${tablet}) {
     width: 30%;
-    margin-bottom: 0;  
+    margin-bottom: 0;
   }
 `;
 
@@ -46,14 +46,14 @@ const InputField = ({ className, type, label, validators, ...rest }) => {
         style={{
           border: `2px solid ${status.isValid ? grey700 : red900}`
         }}
-        touched 
+        touched
         type={type}
-        {...validationAttr} 
+        {...validationAttr}
         {...rest}
       />
     </Wrapper>
   );
-}
+};
 
 InputField.defaultProps = {
   label: "",

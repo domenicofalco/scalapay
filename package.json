@@ -17,15 +17,16 @@
     "usetheform": "^3.4.1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "babel-plugin-module-resolver": "^4.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-next": "12.0.10",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^5.2.0",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.28.0",
-    "prettier": "^1.18.2"
+    "prettier": "^2.2.1"
   }
 }

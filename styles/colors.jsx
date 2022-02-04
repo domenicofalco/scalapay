@@ -15,4 +15,3 @@ export const grey700 = "#666666";
 export const grey900 = "#141413";
 
 export const red900 = "#ff0000";
-

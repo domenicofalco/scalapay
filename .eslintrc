@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "plugin:flowtype/recommended",
+    "prettier/standard",
+    "prettier/flowtype"
+  ],
+  "plugins": [
+    "prettier",
+    "flowtype"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "rules": {
+      "no-unused-vars": 0,
+      "prettier/prettier": ["error", {
+        "endOfLine":"auto",
+        "trailingComma": "none",
+        "arrowParens" :"avoid"
+      }]
+   },
+  "env": {
+      "es6": true,
+      "browser": true,
+      "node": true,
+      "jest": true
+  }
+}

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 import { base } from "fonts";
 import { grey900 } from "colors";
 

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styled from 'styled-components'
+import styled from "styled-components";
 import { medium, large, xLarge, black } from "fonts";
 import { grey900 } from "colors";
 
@@ -26,7 +26,7 @@ const H3 = styled.h3`
 const Title = ({ children, variant, ...rest }) => {
   const El = Title.variants[variant];
   return <El {...rest}>{children}</El>;
-}
+};
 
 Title.variants = {
   primary: H1,
@@ -40,7 +40,7 @@ Title.defaultProps = {
 
 Title.propTypes = {
   children: PropTypes.string.isRequired,
-  variant: PropTypes.string.isRequired,
+  variant: PropTypes.string.isRequired
 };
 
 export default Title;
