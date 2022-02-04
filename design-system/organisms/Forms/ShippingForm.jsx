@@ -1,38 +1,41 @@
 import InputField from "molecules/InputField";
 import { inputField } from "./Styles.module.css";
+
 import { isRequired } from "utils";
 
 const required = isRequired();
 
-export function ConsumerForm() {
+export function ShippingForm() {
   return (
     <>
       <InputField
         validators={[required]}
         className={inputField}
         type="text"
-        name="givenNames"
-        label="Given names"
+        name="countryCode"
+        label="Country code"
       />
       <InputField
         validators={[required]}
         className={inputField}
         type="text"
-        name="surname"
-        label="Surname"
+        name="name"
+        label="City"
       />
+
       <InputField
         validators={[required]}
         className={inputField}
-        type="tel"
-        name="phoneNumber"
-        label="Phone number"
+        type="text"
+        name="postcode"
+        label="Postcode"
       />
+
       <InputField
         validators={[required]}
-        type="email"
-        name="email"
-        label="Email"
+        type="text"
+        name="line1"
+        label="Street"
       />
     </>
   );

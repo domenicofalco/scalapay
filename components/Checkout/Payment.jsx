@@ -1,6 +1,10 @@
 import Form from "usetheform";
-import Forms, { FORM_TYPE_BILLING, FORM_TYPE_CONSUMER } from "organisms/Forms";
+import { BillingForm } from "organisms/Forms/BillingForm";
+import { ConsumerForm } from "organisms/Forms/ConsumerForm";
+import { MerchantForm } from "organisms/Forms/MerchantForm";
+import { ShippingForm } from "organisms/Forms/ShippingForm";
 import { form } from "./Styles.module.css";
+import { FormTemplate } from "./FormTemplate";
 
 export default function Payment() {
   const onSubmit = state => {
@@ -9,8 +13,21 @@ export default function Payment() {
 
   return (
     <Form className={form} onSubmit={onSubmit}>
-      <Forms type={FORM_TYPE_BILLING} title="Billing Info" />
-      <Forms type={FORM_TYPE_CONSUMER} title="Consumer info" />
+      <FormTemplate title="Billing Info" groupName="billing">
+        <BillingForm />
+      </FormTemplate>
+
+      <FormTemplate title="Consumer" groupName="consumer">
+        <ConsumerForm />
+      </FormTemplate>
+
+      <FormTemplate groupName="merchant" style={{ display: "none" }}>
+        <MerchantForm />
+      </FormTemplate>
+
+      <FormTemplate groupName="shipping" title="Shipping">
+        <ShippingForm />
+      </FormTemplate>
 
       <button type="submit">submit</button>
     </Form>
