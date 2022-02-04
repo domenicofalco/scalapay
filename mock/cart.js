@@ -12,12 +12,12 @@ module.exports = [
   },
   {
     price: {
-      amount: "150",
+      amount: "252",
       currency: "EUR"
     },
-    brand: "hawei",
+    brand: "huawei",
     category: "mobile device",
-    name: "hawei 13",
+    name: "huawei 5",
     qt: 1,
     id: "0123222"
   }

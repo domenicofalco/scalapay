@@ -10,6 +10,7 @@ import { FormTemplate } from "./FormTemplate";
 
 export default function Payment() {
   const { cartAmount } = useContext(CheckoutContext);
+  const [amount] = cartAmount;
 
   const onSubmit = state => {
     console.log(state);
@@ -33,7 +34,7 @@ export default function Payment() {
         <ShippingForm />
       </FormTemplate>
 
-      <button type="submit">buy for {cartAmount} EUR</button>
+      <button type="submit">buy for {amount} EUR</button>
     </Form>
   );
 }
