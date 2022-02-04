@@ -1,4 +1,5 @@
-import PropTypes from "prop-types";
+import { useContext } from "react";
+import { CheckoutContext } from "contexts";
 import Form from "usetheform";
 import { BillingForm } from "organisms/Forms/BillingForm";
 import { ConsumerForm } from "organisms/Forms/ConsumerForm";
@@ -7,7 +8,9 @@ import { ShippingForm } from "organisms/Forms/ShippingForm";
 import { form } from "./Styles.module.css";
 import { FormTemplate } from "./FormTemplate";
 
-export default function Payment({ cart }) {
+export default function Payment() {
+  const { cartAmount } = useContext(CheckoutContext);
+
   const onSubmit = state => {
     console.log(state);
   };
@@ -30,11 +33,7 @@ export default function Payment({ cart }) {
         <ShippingForm />
       </FormTemplate>
 
-      <button type="submit">submit</button>
+      <button type="submit">buy for {cartAmount} EUR</button>
     </Form>
   );
 }
-
-Payment.propTypes = {
-  cart: PropTypes.array
-};

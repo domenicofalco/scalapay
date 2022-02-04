@@ -13,7 +13,8 @@
         "colors": "./styles/colors",
         "breakpoints": "./styles/breakpoints",
         "utils": "./utils",
-        "api": "./api"
+        "api": "./api",
+        "contexts": "./contexts"
       }
     }]
   ]

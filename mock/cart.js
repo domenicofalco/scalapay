@@ -7,6 +7,7 @@ module.exports = [
     brand: "apple",
     category: "mobile device",
     name: "iphone 13",
+    qt: 1,
     id: "0123456"
   },
   {
@@ -17,6 +18,7 @@ module.exports = [
     brand: "hawei",
     category: "mobile device",
     name: "hawei 13",
+    qt: 1,
     id: "0123222"
   }
 ];
