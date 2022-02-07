@@ -4,12 +4,12 @@ module.exports = {
   items: [
     {
       price: {
-        amount: "800",
+        amount: "250",
         currency: "EUR"
       },
       brand: "apple",
       category: "mobile device",
-      name: "iphone 13",
+      name: "iphone 4",
       qt: 1,
       id: "0123456"
     },
