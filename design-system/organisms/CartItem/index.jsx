@@ -54,7 +54,7 @@ export default function CartItem({
       <Text>
         Price per unit: {amount} {currency}
       </Text>
-      <Text>sky {id}</Text>
+      <Text>SKU {id}</Text>
     </Wrapper>
   );
 }
