@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { CheckoutContext } from "contexts";
 import Form from "usetheform";
+import { SCALAPAY_V2_ORDER } from "endpoint";
+import Button from "atoms/Button";
 import { BillingForm } from "organisms/Forms/BillingForm";
 import { ConsumerForm } from "organisms/Forms/ConsumerForm";
 import { ShippingForm } from "organisms/Forms/ShippingForm";
-import Button from "atoms/Button";
 import { form } from "./Styles.module.css";
 import { FormTemplate } from "./FormTemplate";
 
@@ -21,7 +22,7 @@ export default function Payment() {
     )
   };
 
-  const onSubmit = state => {
+  const onSubmit = async state => {
     const merchant = { redirectCancelUrl, redirectConfirmUrl };
     const items = cartItems
       .filter(item => item.qt > 0)
@@ -41,7 +42,17 @@ export default function Payment() {
       totalAmount
     };
 
-    console.log("newState", newState);
+    const rawResponse = await fetch(SCALAPAY_V2_ORDER, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newState)
+    });
+    const content = await rawResponse.json();
+
+    console.log(content);
   };
 
   return (

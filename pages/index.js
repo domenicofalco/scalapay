@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Head from "next/head";
 import Checkout from "components/Checkout";
-import { CART_ENDPOINT } from "api";
+import { CART_ENDPOINT } from "endpoint";
 import { pink } from "colors";
 
 const styles = {
