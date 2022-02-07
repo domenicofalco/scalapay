@@ -22,5 +22,5 @@ export default function Checkout({ cart }) {
 }
 
 Checkout.propTypes = {
-  cart: PropTypes.array
+  cart: PropTypes.object
 };

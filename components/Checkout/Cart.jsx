@@ -8,7 +8,7 @@ export default function Cart() {
   const { cart } = useContext(CheckoutContext);
   const [context, dispatch] = cart;
   const updateUnitQuantity = (productId, newAmount) => {
-    const productUpdated = context.map(item => {
+    const items = context.items.map(item => {
       if (item.id === productId) {
         return {
           ...item,
@@ -18,7 +18,7 @@ export default function Cart() {
       return item;
     });
 
-    dispatch(productUpdated);
+    dispatch({ ...cart, items });
   };
 
   return (
@@ -26,7 +26,7 @@ export default function Cart() {
       <Title className={heading} variant="tertiary">
         Your cart
       </Title>
-      {context.map((item, i) => (
+      {context.items.map((item, i) => (
         <div key={i} className={cartItem}>
           <CartItem updateUnitQuantity={updateUnitQuantity} {...item} />
         </div>

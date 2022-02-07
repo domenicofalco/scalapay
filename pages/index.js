@@ -37,16 +37,20 @@ Home.getInitialProps = async function () {
 };
 
 Home.propTypes = {
-  cart: PropTypes.arrayOf(
-    PropTypes.shape({
-      price: PropTypes.shape({
-        amount: PropTypes.string,
-        currency: PropTypes.string
-      }),
-      brand: PropTypes.string,
-      category: PropTypes.string,
-      name: PropTypes.string,
-      id: PropTypes.string
-    })
-  )
+  cart: PropTypes.shape({
+    redirectCancelUrl: PropTypes.string,
+    redirectConfirmUrl: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        price: PropTypes.shape({
+          amount: PropTypes.string,
+          currency: PropTypes.string
+        }),
+        brand: PropTypes.string,
+        category: PropTypes.string,
+        name: PropTypes.string,
+        id: PropTypes.string
+      })
+    )
+  })
 };
