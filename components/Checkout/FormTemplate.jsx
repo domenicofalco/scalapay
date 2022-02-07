@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { Collection } from "usetheform";
-import InputField from "molecules/InputField";
-import Title from "molecules/Title";
+import Title from "atoms/Title";
 import { sectionTitle, fieldset } from "./Styles.module.css";
 import { isRequired } from "utils";
 

@@ -1,5 +1,5 @@
 import Paragraph from "atoms/Paragraph";
-import Title from "molecules/Title";
+import Title from "atoms/Title";
 import { textMargin, heading } from "./Styles.module.css";
 
 export default function Header() {

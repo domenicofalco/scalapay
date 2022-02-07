@@ -4,7 +4,7 @@ module.exports = {
   items: [
     {
       price: {
-        amount: "899",
+        amount: "800",
         currency: "EUR"
       },
       brand: "apple",
@@ -15,13 +15,13 @@ module.exports = {
     },
     {
       price: {
-        amount: "252",
+        amount: "200",
         currency: "EUR"
       },
       brand: "huawei",
       category: "mobile device",
       name: "huawei 5",
-      qt: 1,
+      qt: 2,
       id: "0123222"
     }
   ]

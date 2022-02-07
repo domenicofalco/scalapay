@@ -1,20 +1,16 @@
 import styled from "styled-components";
-import { base } from "fonts";
+import Button from "atoms/Button";
 import { useEffect, useState } from "react";
+import Paragraph from "atoms/Paragraph";
 
-const Wrapper = styled.div``;
-
-const Text = styled.p`
-  font-size: ${base};
+const Quantity = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
-const Button = styled.button`
-  border: 1px solid #000;
-  width: 20px;
-  margin: 0 4px;
-  padding: 3px;
-  cursor: pointer;
-  background: none;
+const Text = styled(Paragraph)`
+  margin-right: 5px;
+  margin-bottom: 5px;
 `;
 
 export default function CartItem({
@@ -42,19 +38,35 @@ export default function CartItem({
   }, [quantity]);
 
   return (
-    <Wrapper>
+    <div>
       <Text>
         {brand} - {name} ({category})
       </Text>
       <Text>
-        quantity {quantity}
-        <Button onClick={add}>+</Button>
-        <Button onClick={remove}>-</Button>
+        Price per unit:{" "}
+        <b>
+          {amount} {currency}
+        </b>
       </Text>
-      <Text>
-        Price per unit: {amount} {currency}
-      </Text>
-      <Text>SKU {id}</Text>
-    </Wrapper>
+      <Quantity>
+        <Text>Qt {quantity}</Text>
+        <Button
+          variant="roundIcon"
+          type="button"
+          style={{ marginRight: 5 }}
+          onClick={add}
+        >
+          +
+        </Button>
+        <Button
+          variant="roundIcon"
+          type="button"
+          style={{ marginRight: 5 }}
+          onClick={remove}
+        >
+          -
+        </Button>
+      </Quantity>
+    </div>
   );
 }

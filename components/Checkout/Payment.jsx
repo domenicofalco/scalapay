@@ -4,6 +4,7 @@ import Form from "usetheform";
 import { BillingForm } from "organisms/Forms/BillingForm";
 import { ConsumerForm } from "organisms/Forms/ConsumerForm";
 import { ShippingForm } from "organisms/Forms/ShippingForm";
+import Button from "atoms/Button";
 import { form } from "./Styles.module.css";
 import { FormTemplate } from "./FormTemplate";
 
@@ -57,9 +58,9 @@ export default function Payment() {
         <ShippingForm />
       </FormTemplate>
 
-      <button type="submit">
+      <Button variant="primary" type="submit">
         buy for {totalAmount.amount} {totalAmount.currency}
-      </button>
+      </Button>
     </Form>
   );
 }

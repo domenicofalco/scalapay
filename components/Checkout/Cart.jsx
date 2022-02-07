@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import Title from "molecules/Title";
+import Title from "atoms/Title";
 import { CheckoutContext } from "contexts";
 import CartItem from "organisms/CartItem";
 import { cartWrapper, cartItem, heading } from "./Styles.module.css";

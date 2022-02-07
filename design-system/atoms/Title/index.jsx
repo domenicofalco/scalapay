@@ -24,7 +24,7 @@ const H3 = styled.h3`
 `;
 
 const Title = ({ children, variant, ...rest }) => {
-  const El = Title.variants[variant];
+  const El = Title.variants[variant] || primary;
   return <El {...rest}>{children}</El>;
 };
 
