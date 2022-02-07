@@ -7,31 +7,40 @@ import { ShippingForm } from "organisms/Forms/ShippingForm";
 import { form } from "./Styles.module.css";
 import { FormTemplate } from "./FormTemplate";
 
-// const merchant = {
-//   redirectCancelUrl: "https://www.google.it?redirectCancelUrl",
-//   redirectConfirmUrl: "https://www.google.it?redirectConfirmUrl"
-// };
-
-// const items = [
-//   {
-//     price: { amount: "750", currency: "EUR" },
-//     brand: "apple",
-//     category: "elettronic device",
-//     name: "iphone",
-//     quantity: 1,
-//     sku: "0123456"
-//   }
-// ];
-
 export default function Payment() {
   const { cart } = useContext(CheckoutContext);
   const [context] = cart;
-  const totalAmount = context.items.reduce((acc, a) => {
-    return acc + parseInt(a.price.amount) * a.qt;
-  }, 0);
+  const { redirectCancelUrl, redirectConfirmUrl, items: cartItems } = context;
+
+  const totalAmount = {
+    currency: "EUR",
+    amount: cartItems.reduce(
+      (acc, a) => acc + parseInt(a.price.amount) * a.qt,
+      0
+    )
+  };
 
   const onSubmit = state => {
-    console.log(state);
+    const merchant = { redirectCancelUrl, redirectConfirmUrl };
+    const items = cartItems
+      .filter(item => item.qt > 0)
+      .map(item => ({
+        price: item.price,
+        brand: item.brand,
+        category: item.category,
+        name: item.name,
+        quantity: item.qt,
+        sku: item.id
+      }));
+
+    const newState = {
+      ...state,
+      merchant,
+      items,
+      totalAmount
+    };
+
+    console.log("newState", newState);
   };
 
   return (
@@ -48,7 +57,9 @@ export default function Payment() {
         <ShippingForm />
       </FormTemplate>
 
-      <button type="submit">buy for {totalAmount} EUR</button>
+      <button type="submit">
+        buy for {totalAmount.amount} {totalAmount.currency}
+      </button>
     </Form>
   );
 }

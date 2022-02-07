@@ -18,7 +18,7 @@ export default function Cart() {
       return item;
     });
 
-    dispatch({ ...cart, items });
+    dispatch({ ...context, items });
   };
 
   return (
