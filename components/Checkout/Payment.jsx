@@ -14,12 +14,14 @@ export default function Payment() {
   const [context] = cart;
   const { redirectCancelUrl, redirectConfirmUrl, items: cartItems } = context;
 
+  const finalAmount = cartItems.reduce(
+    (acc, a) => acc + parseInt(a.price.amount) * a.qt,
+    0
+  );
+
   const totalAmount = {
     currency: "EUR",
-    amount: cartItems.reduce(
-      (acc, a) => acc + parseInt(a.price.amount) * a.qt,
-      0
-    )
+    amount: JSON.stringify(finalAmount)
   };
 
   const onSubmit = async state => {

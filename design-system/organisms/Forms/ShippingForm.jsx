@@ -14,6 +14,7 @@ export function ShippingForm() {
         type="text"
         name="countryCode"
         label="Country code"
+        maxLength="2"
       />
       <InputField
         validators={[required]}

@@ -9,6 +9,7 @@ export function BillingForm() {
         type="text"
         name="countryCode"
         label="Country code"
+        maxLength="2"
       />
       <InputField className={inputField} type="text" name="name" label="City" />
       <InputField

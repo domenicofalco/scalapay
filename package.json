@@ -2,16 +2,16 @@
   "name": "buynow-paylater",
   "private": true,
   "scripts": {
-    "dev": "cross-env BASE_API_URL=http://localhost:3000 nodemon server.js",
+    "dev": "cross-env BASE_API_URL=http://localhost:3000 SCALAPAY_ENDPOINT=https://staging.api.scalapay.com/v2/orders API_SECRET_KEY=qhtfs87hjnc12kkos nodemon server.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "api": "^4.2.0",
     "body-parser": "^1.19.1",
     "express": "^4.17.2",
     "next": "12.0.10",
+    "node-fetch": "^2.6.1",
     "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
