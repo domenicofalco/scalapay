@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { medium, large, xLarge, black } from "fonts";
+import { base, medium, large, xLarge, black } from "fonts";
 import { grey900 } from "colors";
 
 const commonStyles = {
@@ -23,6 +23,11 @@ const H3 = styled.h3`
   ${commonStyles}
 `;
 
+const H4 = styled.h4`
+  font-size: ${base};
+  ${commonStyles}
+`;
+
 const Title = ({ children, variant, ...rest }) => {
   const El = Title.variants[variant] || primary;
   return <El {...rest}>{children}</El>;
@@ -31,7 +36,8 @@ const Title = ({ children, variant, ...rest }) => {
 Title.variants = {
   primary: H1,
   secondary: H2,
-  tertiary: H3
+  tertiary: H3,
+  quaternary: H4
 };
 
 Title.defaultProps = {

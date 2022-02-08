@@ -1,17 +1,24 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CheckoutContext } from "contexts";
 import Form from "usetheform";
 import { SCALAPAY_V2_ORDER } from "endpoint";
 import Button from "atoms/Button";
+import Title from "atoms/Title";
+import Paragraph from "atoms/Paragraph";
 import PageLoader from "atoms/PageLoader";
+import Modal from "organisms/Modal";
 import { BillingForm } from "organisms/Forms/BillingForm";
 import { ConsumerForm } from "organisms/Forms/ConsumerForm";
 import { ShippingForm } from "organisms/Forms/ShippingForm";
 import { form } from "./Styles.module.css";
 import { FormTemplate } from "./FormTemplate";
+import { knownErrors } from "./errors";
 
 export default function Payment() {
+  const [errors, setErrors] = useState([]);
+  const [showModal, setShowModal] = useState(false);
   const [isLoading, setLoading] = useState(false);
+
   const { cart } = useContext(CheckoutContext);
   const [context] = cart;
   const { redirectCancelUrl, redirectConfirmUrl, items: cartItems } = context;
@@ -58,11 +65,31 @@ export default function Payment() {
     });
 
     const content = await rawResponse.json();
+    const { checkoutUrl, message } = content;
 
-    setLoading(false);
+    if (checkoutUrl) {
+      window.open(checkoutUrl, "_top");
+    } else {
+      if (knownErrors[message]) {
+        const formatError = [
+          {
+            messages: [knownErrors[message]]
+          }
+        ];
+        setErrors(formatError);
+      } else if (message.errors && message.errors.length > 0) {
+        setErrors(message.errors);
+      }
 
-    console.log(content);
+      setLoading(false);
+    }
   };
+
+  useEffect(() => {
+    if (errors && errors.length > 0) {
+      setShowModal(true);
+    }
+  }, [errors]);
 
   return (
     <Form className={form} onSubmit={onSubmit}>
@@ -83,6 +110,17 @@ export default function Payment() {
       <Button variant="primary" type="submit">
         buy for {totalAmount.amount} {totalAmount.currency}
       </Button>
+
+      <Modal showModal={showModal} onClose={() => setShowModal(false)}>
+        <Title variant="quaternary" style={{ marginBottom: 16 }}>
+          There seems to be an error with your request
+        </Title>
+        {errors &&
+          errors.length > 0 &&
+          errors.map(error => {
+            return error.messages.map(msg => <Paragraph>{msg}</Paragraph>);
+          })}
+      </Modal>
     </Form>
   );
 }
