@@ -118,7 +118,9 @@ export default function Payment() {
         {errors &&
           errors.length > 0 &&
           errors.map(error => {
-            return error.messages.map(msg => <Paragraph>{msg}</Paragraph>);
+            return error.messages.map((msg, i) => (
+              <Paragraph key={i}>{msg}</Paragraph>
+            ));
           })}
       </Modal>
     </Form>
