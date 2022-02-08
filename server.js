@@ -21,7 +21,7 @@ app.prepare().then(() => {
     return res.send(cart); // mocking some API/DB data
   });
 
-  server.post("/api/external/scalapay", async (req, res) => {
+  server.post("/api/external/scalapay", (req, res) => {
     const options = {
       method: "POST",
       headers: {
