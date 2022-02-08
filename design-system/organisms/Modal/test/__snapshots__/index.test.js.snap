@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`organisms => Modal It should match snapshots and render children 1`] = `
+<DocumentFragment>
+  <div
+    selector="#modal-root"
+  >
+    <div
+      class="Modal__Wrapper-sc-1dpt69b-0 hKXsaP"
+    >
+      <div
+        class="Modal__Container-sc-1dpt69b-1 bnQqjN"
+      >
+        <span
+          class="Modal__BtnWrap-sc-1dpt69b-2 cHauyq"
+        >
+          <button
+            class="Button__roundIcon-sc-6egjvv-2 feZvzI"
+            data-variant="roundIcon"
+            type="button"
+          >
+            X
+          </button>
+        </span>
+        <div
+          class="Modal__ChildWrap-sc-1dpt69b-3 kVnOOr"
+        >
+          <div>
+            Modal
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

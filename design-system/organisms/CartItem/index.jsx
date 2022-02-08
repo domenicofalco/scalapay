@@ -51,6 +51,7 @@ export default function CartItem({
       <Quantity>
         <Text>Qt {quantity}</Text>
         <Button
+          className="add-qt"
           variant="roundIcon"
           type="button"
           style={{ marginRight: 5 }}
@@ -59,6 +60,7 @@ export default function CartItem({
           +
         </Button>
         <Button
+          className="remove-qt"
           variant="roundIcon"
           type="button"
           style={{ marginRight: 5 }}

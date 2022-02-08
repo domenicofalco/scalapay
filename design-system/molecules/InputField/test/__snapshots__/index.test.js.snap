@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`molecules => InputField It should render the inputfield with a label 1`] = `
+<DocumentFragment>
+  <form>
+    <div
+      class="InputField__Wrapper-sc-53rc5u-0 gMZqUu"
+    >
+      <label
+        class="InputField__Label-sc-53rc5u-1 kwFgpj"
+      >
+        a_label
+      </label>
+      <input
+        class="InputField__Input-sc-53rc5u-2 csGXuB"
+        style="border: 2px solid #666666;"
+        type="text"
+        value=""
+      />
+    </div>
+  </form>
+</DocumentFragment>
+`;

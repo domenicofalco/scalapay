@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`organisms => CartItem It should match snapshots 1`] = `
+<DocumentFragment>
+  <div>
+    <p
+      class="Paragraph-sc-14i1zm6-0 CartItem__Text-sc-cto248-1 lbtMbQ iMMURT"
+    >
+      apple - iphone 13 (mobile device)
+    </p>
+    <p
+      class="Paragraph-sc-14i1zm6-0 CartItem__Text-sc-cto248-1 lbtMbQ iMMURT"
+    >
+      Price per unit: 
+      <b>
+        800 EUR
+      </b>
+    </p>
+    <div
+      class="CartItem__Quantity-sc-cto248-0 fzcZsj"
+    >
+      <p
+        class="Paragraph-sc-14i1zm6-0 CartItem__Text-sc-cto248-1 lbtMbQ iMMURT"
+      >
+        Qt 1
+      </p>
+      <button
+        class="Button__roundIcon-sc-6egjvv-2 feZvzI add-qt"
+        data-variant="roundIcon"
+        style="margin-right: 5px;"
+        type="button"
+      >
+        +
+      </button>
+      <button
+        class="Button__roundIcon-sc-6egjvv-2 feZvzI remove-qt"
+        data-variant="roundIcon"
+        style="margin-right: 5px;"
+        type="button"
+      >
+        -
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
