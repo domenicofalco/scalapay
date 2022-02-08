@@ -37,7 +37,11 @@ const roundIcon = styled.button`
 
 const Button = ({ children, variant, ...rest }) => {
   const El = Button.variants[variant] || primary;
-  return <El {...rest}>{children}</El>;
+  return (
+    <El {...rest} data-variant={variant}>
+      {children}
+    </El>
+  );
 };
 
 Button.variants = {

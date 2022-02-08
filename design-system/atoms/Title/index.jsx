@@ -30,7 +30,11 @@ const H4 = styled.h4`
 
 const Title = ({ children, variant, ...rest }) => {
   const El = Title.variants[variant] || primary;
-  return <El {...rest}>{children}</El>;
+  return (
+    <El {...rest} data-variant={variant}>
+      {children}
+    </El>
+  );
 };
 
 Title.variants = {

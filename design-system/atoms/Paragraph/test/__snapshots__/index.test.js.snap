@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`atoms => Paragraph It should match snapshot 1`] = `
+<DocumentFragment>
+  <p
+    class="Paragraph-sc-14i1zm6-0 lbtMbQ"
+  >
+    Paragraph
+  </p>
+</DocumentFragment>
+`;

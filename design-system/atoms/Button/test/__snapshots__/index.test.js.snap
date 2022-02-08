@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`atoms => Button It should render 'primary' variant 1`] = `
+<DocumentFragment>
+  <button
+    class="Button__primary-sc-6egjvv-0 kmwFgP"
+    data-variant="primary"
+    type="button"
+  >
+    Button
+  </button>
+</DocumentFragment>
+`;

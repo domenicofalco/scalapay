@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`atoms => Title It should render 'primary' variant 1`] = `
+<DocumentFragment>
+  <h1
+    class="Title__H1-sc-1jtvfjh-0 DJZNc"
+    data-variant="primary"
+    type="button"
+  >
+    Title
+  </h1>
+</DocumentFragment>
+`;
